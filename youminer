@@ -1,0 +1,26 @@
+#!/usr/bin/sh
+. ./apikey.sh
+echo $APIKEY
+
+for KEYWORDS in \
+	"big+data" \
+	"realite+augmentee" \
+	"3d"
+do
+	curl -o data.json "https://www.googleapis.com/youtube/v3/search?type=video&q=${KEYWORDS}&maxResults=11&part=snippet&key=${APIKEY}"
+	FILENAME=$(echo ${KEYWORDS} | sed 's/+/_/')
+	cat header.html > ${FILENAME}.html
+	echo '<body>' >> ${FILENAME}.html
+	echo '<nav>' >> ${FILENAME}.html
+	echo '	<a href="big_data.html">Big Data</a>' >> ${FILENAME}.html
+	echo '	<a href="realite_augmentee.html">Réalité Augmentée</a>' >> ${FILENAME}.html
+	echo '	<a href="3d.html">3D</a>' >> ${FILENAME}.html
+	echo '</nav>' >> ${FILENAME}.html
+	echo '<ul>' >> ${FILENAME}.html
+	/usr/bin/env python get_links.py >> ${FILENAME}.html
+	echo '</ul>' >> ${FILENAME}.html
+	echo '</body>' >> ${FILENAME}.html
+	echo '</html>' >> ${FILENAME}.html
+	rm data.json
+done
+
