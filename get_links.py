@@ -1,3 +1,5 @@
+# -*- coding: latin-1 -*-
+
 import json
 json_data = open('data.json')
 data = json.load(json_data)
