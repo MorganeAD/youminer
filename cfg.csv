@@ -1,5 +1,10 @@
 DataName, Data
-channelID, 
+part, snippet
+forContentOwner, 0
+forDeveloper, 0
+forMine, 0
+relatedToVideoId, 
+channelId, 
 channelType, any
 eventType, completed
 location,
@@ -13,20 +18,15 @@ publishedBefore,
 q,
 regionCode, 
 relevanceLanguage, 
-safeSearch,
+safeSearch, none
 topicId,
 type,
-videoCaption,
+videoCaption, any
 videoCategoryId,
-videoDefinition,
-videoDimension,
-videoDuration,
-videoEmbeddable,
-videoLicense,
-videoSyndicated,
-videoType,
-
-
-
-
-
+videoDefinition, any
+videoDimension, any
+videoDuration, any
+videoEmbeddable, any
+videoLicense, any
+videoSyndicated, any
+videoType, any
