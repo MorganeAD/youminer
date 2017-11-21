@@ -1,0 +1,32 @@
+DataName, Data
+channelID, 
+channelType, any
+eventType, completed
+location,
+locationRadius,
+maxResults, 5
+onBehalfOfContentOwner, 
+order, relevance
+pageToken,
+publishedAfter,
+publishedBefore, 
+q,
+regionCode, 
+relevanceLanguage, 
+safeSearch,
+topicId,
+type,
+videoCaption,
+videoCategoryId,
+videoDefinition,
+videoDimension,
+videoDuration,
+videoEmbeddable,
+videoLicense,
+videoSyndicated,
+videoType,
+
+
+
+
+
