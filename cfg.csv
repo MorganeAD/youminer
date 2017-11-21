@@ -1,32 +1,32 @@
-DataName, Data
-part, snippet
-forContentOwner, 0
-forDeveloper, 0
-forMine, 0
+DataName,Data
+part,snippet
+forContentOwner,0
+forDeveloper,0
+forMine,0
 relatedToVideoId, 
 channelId, 
-channelType, any
-eventType, completed
+channelType,any
+eventType,completed
 location,
 locationRadius,
-maxResults, 5
+maxResults,5
 onBehalfOfContentOwner, 
-order, relevance
+order,relevance
 pageToken,
 publishedAfter,
 publishedBefore, 
 q,
 regionCode, 
 relevanceLanguage, 
-safeSearch, none
+safeSearch,none
 topicId,
 type,
-videoCaption, any
+videoCaption,any
 videoCategoryId,
-videoDefinition, any
-videoDimension, any
-videoDuration, any
-videoEmbeddable, any
-videoLicense, any
-videoSyndicated, any
-videoType, any
+videoDefinition,any
+videoDimension,any
+videoDuration,any
+videoEmbeddable,any
+videoLicense,any
+videoSyndicated,any
+videoType,any
