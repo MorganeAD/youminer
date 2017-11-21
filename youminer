@@ -1,6 +1,5 @@
 #!/bin/sh
 . ./apikey.sh
-echo $APIKEY
 
 mkdir -p pages
 cd pages
