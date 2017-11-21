@@ -14,7 +14,6 @@ of your choise and write in it :
 
     APIKEY=<your_youtube_api_key>
 
-
 Running youminer
 ----------------
 Run:
