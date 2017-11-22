@@ -3,36 +3,39 @@
 
 REQ=$(sh parse.sh cfg.csv)
 mkdir -p pages
-cd pages
 
 for KEYWORDS in \
 	"big+data" \
 	"realite+augmentee" \
 	"3d"
 do
-	curl -s -o data.json "https://www.googleapis.com/youtube/v3/search?q=${KEYWORDS}&${REQ}key=${APIKEY}"
+	curl -s -o videos.json "https://www.googleapis.com/youtube/v3/search?q=${KEYWORDS}&${REQ}key=${APIKEY}"
 	if [ $? -ne 0 ]
 	then
 		echo 'youminer: error while retrieving informations'
 		continue
 	fi
 	FILENAME=$(echo ${KEYWORDS} | sed 's/+/_/')
-	cat ../header.html | tee ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '<body>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '<nav>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '	<a href="big_data_video.html">Big Data</a>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '	<a href="realite_augmentee_video.html">Réalité Augmentée</a>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '	<a href="3d_video.html">3D</a>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '</nav>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '<nav>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo "	<a href=\"${FILENAME}_video.html\">Vidéo</a>" | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo "	<a href=\"${FILENAME}_author.html\">Auteur</a>" | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '</nav>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '<ul>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	/usr/bin/env python3 ../get_links.py >> ${FILENAME}_video.html
-	echo '</ul>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '</body>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	echo '</html>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
-	rm data.json
+	cat header.html | tee pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '<body>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '<nav>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '	<a href="big_data_video.html">Big Data</a>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '	<a href="realite_augmentee_video.html">Réalité Augmentée</a>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '	<a href="3d_video.html">3D</a>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '</nav>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '<nav>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo "	<a href=\"pages/${FILENAME}_video.html\">Vidéo</a>" | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo "	<a href=\"pages/${FILENAME}_author.html\">Auteur</a>" | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '</nav>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '<ul>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	/usr/bin/env python3 get_videos.py >> pages/${FILENAME}_video.html
+	for ID in $(/usr/bin/env python3 get_authors_id.py)
+	do
+		echo ${ID}
+		curl -s -o ${ID}.json "https://www.googleapis.com/youtube/v3/channels?id=${ID}&part=statistics,snippet&key=${APIKEY}";
+	done
+	echo '</ul>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '</body>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	echo '</html>' | tee -a pages/${FILENAME}_video.html pages/${FILENAME}_author.html >/dev/null
+	rm *.json
 done
-cd ../
