@@ -11,6 +11,11 @@ for KEYWORDS in \
 	"3d"
 do
 	curl -s -o data.json "https://www.googleapis.com/youtube/v3/search?q=${KEYWORDS}&${REQ}key=${APIKEY}"
+	if [ $? -ne 0 ]
+	then
+		echo 'youminer: error while retrieving informations'
+		continue
+	fi
 	FILENAME=$(echo ${KEYWORDS} | sed 's/+/_/')
 	cat ../header.html | tee ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
 	echo '<body>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
