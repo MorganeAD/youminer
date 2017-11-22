@@ -1,4 +1,3 @@
-DataName,Data
 part,snippet
 forContentOwner,
 forDeveloper,
@@ -20,7 +19,7 @@ regionCode,
 relevanceLanguage, 
 safeSearch,
 topicId,
-type,
+type,video
 videoCaption,
 videoCategory
 videoDefinition,
