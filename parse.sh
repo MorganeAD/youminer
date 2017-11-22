@@ -12,4 +12,4 @@ do
 	then
 		echo -n "${KEY}=${VAL}&"
 	fi
-done <<< $(sed '1d' $1)
+done < $1
