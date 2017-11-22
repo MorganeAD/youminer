@@ -10,7 +10,7 @@ for KEYWORDS in \
 	"realite+augmentee" \
 	"3d"
 do
-	curl -o data.json "https://www.googleapis.com/youtube/v3/search?q=${KEYWORDS}&${REQ}key=${APIKEY}"
+	curl -s -o data.json "https://www.googleapis.com/youtube/v3/search?q=${KEYWORDS}&${REQ}key=${APIKEY}"
 	FILENAME=$(echo ${KEYWORDS} | sed 's/+/_/')
 	cat ../header.html | tee ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
 	echo '<body>' | tee -a ${FILENAME}_video.html ${FILENAME}_author.html >/dev/null
