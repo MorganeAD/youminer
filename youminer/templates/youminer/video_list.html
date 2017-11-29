@@ -1,0 +1,10 @@
+{% extends 'youminer/base.html' %}
+{% block content %}
+    {% for video in videos %}
+        <div class="video">
+            <h1><a href="{{ video.url }}">{{ video.channel }}</a></h1>
+            <img src="{{ video.thumbnail }}"> 
+            <p>{{ video.title }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

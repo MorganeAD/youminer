@@ -1,2 +1,9 @@
 apikey.sh
 pages
+*pyc
+*~
+__pycache__
+mabulle
+/static
+.DS_Store
+*.json

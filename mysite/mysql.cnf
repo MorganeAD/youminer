@@ -1,0 +1,5 @@
+[client]
+database = youminerdb
+user = youminer
+password =
+default-character-set = utf8
