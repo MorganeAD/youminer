@@ -1,10 +1,26 @@
 import os
 import json
+import csv
 from youminer.models import Video
 
-Video.objects.all().delete()
+Video.objects.all().delete()	# suppression des resultats precedents
 
-for keyword in ['big+data', 'realite+virtuelle', '3D']:
+listeCategory = []				# recherche de la liste des categorie
+fname = "youminer/cfg.csv"
+file = open(fname)
+try:
+	reader = csv.reader(file)
+	for row in reader:
+		if row[0] == 'q':
+			i = 1
+			while i < len(row):
+				listeCategory.append(row[i])
+				i+=1
+finally:
+	file.close()
+
+#for keyword in ['big+data', 'realite+virtuelle', '3D']:
+for keyword in listeCategory:
 	os.system('sh youminer/ytinterface.sh ' + keyword)
 	json_data = open('answer.json')
 	data = json.load(json_data)

@@ -14,7 +14,7 @@ order,
 pageToken,
 publishedAfter,
 publishedBefore, 
-q,
+q,'big+data','realite+virtuelle', '3D'
 regionCode, 
 relevanceLanguage, 
 safeSearch,
