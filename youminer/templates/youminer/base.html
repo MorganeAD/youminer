@@ -30,6 +30,15 @@ nav {
 </style>
 </head>
 <body>
+	<nav>
+		{% for category in categories %}
+			<a href="/videos/{{ category.name }}">{{ category.name }}</a>
+		{% endfor %}
+	</nav>
+	<nav>
+		<a href="/videos/{{ currentCat }}">Vidéos</a>
+		<a href="/authors/{{ currentCat }}">Auteurs</a>
+	</nav>
 {% block content %}
 {% endblock %}
 </body>

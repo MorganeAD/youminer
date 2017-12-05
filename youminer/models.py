@@ -1,24 +1,32 @@
 from django.db import models
 from django.utils import timezone
 
+class Category(models.Model):
+    name = models.CharField(default = "", max_length = 255)
+
+    def __str__(self):
+        return self.name
+
+class Author(models.Model):
+    channelId    = models.CharField(default = "", max_length = 255, primary_key=True)
+    channelTitle = models.CharField(default = "", max_length = 255)
+    nbVideos     = models.CharField(default = "", max_length = 255)
+    createdDate  = models.CharField(default = "", max_length = 255)
+    url          = models.CharField(default = "", max_length = 255)
+    category     = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.channelTitle
 
 class Video(models.Model):
-    channel      = models.CharField(default = "", max_length = 255)
+    videoId      = models.CharField(default = "", max_length = 255, primary_key=True)
+    author       = models.ForeignKey(Author, on_delete=models.CASCADE)
     title        = models.CharField(default = "", max_length = 255)
     image        = models.CharField(default = "", max_length = 255)
     created_date = models.CharField(default = "", max_length = 255)
     url          = models.CharField(default = "", max_length = 255)
     thumbnail    = models.CharField(default = "", max_length = 255)
-    category     = models.CharField(default = "", max_length = 255)
+    category     = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.channel + " - " + self.title
-
-class Author(models.Model):
-    channelId    = ""
-    channelTitle = ""
-    nbVideos     = ""
-    created_date = ""
-
-    def __str__(self):
-        return self.channelTitle
