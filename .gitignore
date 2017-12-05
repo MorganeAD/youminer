@@ -4,6 +4,7 @@ pages
 *~
 __pycache__
 mabulle
+db.sqlite3
 /static
 .DS_Store
 *.json
