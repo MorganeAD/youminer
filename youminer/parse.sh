@@ -7,6 +7,10 @@ fi
 while read LINE
 do
 	KEY=$(echo $LINE | cut -d',' -f1)
+	if [ $KEY = 'q' ]
+	then
+		continue
+	fi
 	VAL=$(echo $LINE | cut -d',' -f2)
 	if [ $VAL ]
 	then

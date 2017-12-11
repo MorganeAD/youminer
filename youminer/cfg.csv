@@ -14,14 +14,14 @@ order,
 pageToken,
 publishedAfter,
 publishedBefore, 
-q,'big+data','realite+virtuelle', '3D'
+q,big+data,realite+virtuelle,3D
 regionCode, 
 relevanceLanguage, 
 safeSearch,
 topicId,
 type,video
 videoCaption,
-videoCategory
+videoCategory,
 videoDefinition,
 videoDimension,
 videoDuration,

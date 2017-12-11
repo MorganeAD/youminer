@@ -24,7 +24,7 @@ finally:
 
 #for keyword in ['big+data', 'realite+virtuelle', '3D']:
 for keyword in listeCategory:
-    os.system('sh youminer/ytinterface.sh ' 'v ' + keyword)
+    os.system('sh youminer/ytinterface.sh ' + 'v ' + keyword)
     json_data = open('answer.json', 'rt', encoding='latin1')
     videosData = json.load(json_data)
     json_data.close()
@@ -37,7 +37,7 @@ for keyword in listeCategory:
             channelIds.append(channelId)
 
     for i in range(0, len(channelIds)):
-        os.system('sh youminer/ytinterface.sh ' 'a ' + channelIds[i])
+        os.system('sh youminer/ytinterface.sh ' + 'a ' + channelIds[i])
         json_data = open('answer.json', 'rt', encoding='latin1')
         authorsData = json.load(json_data)
         json_data.close()
