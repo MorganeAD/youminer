@@ -42,10 +42,11 @@ for keyword in listeCategory:
         authorsData = json.load(json_data)
         json_data.close()
         url = "https://www.youtube.com/user/"
+        thumbnail = authorsData['items'][0]['snippet']['thumbnails']['default']['url']
         channelTitle = authorsData['items'][0]['snippet']['title']
         nbVideos = authorsData['items'][0]['statistics']['videoCount'] 
         createdDate = authorsData['items'][0]['snippet']['publishedAt']
-        Author.objects.create(channelId=channelIds[i], channelTitle=channelTitle, url=url, nbVideos=nbVideos, createdDate=createdDate, category=category)
+        Author.objects.create(channelId=channelIds[i], channelTitle=channelTitle, thumbnail=thumbnail, url=url, nbVideos=nbVideos, createdDate=createdDate, category=category)
 
     for i in range(len(videosData['items']) - 1):
         videoId = videosData['items'][i]['id']['videoId']
