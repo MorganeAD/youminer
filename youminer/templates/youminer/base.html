@@ -1,45 +1,58 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>YouTube Miner</title>
-<style>
-body {
-	margin: 40px auto;
-	padding: 0 10px;
-	max-width: 650px;
-	line-height: 1.6;
-	font-size: 18px;
-	color: #444444;
-	background-color: #fdf6e3;
-	text-align: justify;
-}
-a { color: #444444; }
-nav a {
-	display: inline-block;
-	width: 32%;
-	background-color: gray;
-	text-align: center;
-	color: #fdf6e3;
-	background-color: #444444;
-	text-decoration: none;
-}
-nav {
-    margin-bottom: 10px;
-}
-</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{% static 'css/youminer.css' %}">
 </head>
 <body>
-	<nav>
-		{% for category in categories %}
-			<a href="/videos/{{ category.name }}">{{ category.name }}</a>
-		{% endfor %}
+	<!-- Image and text -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">
+			<img src="{% static 'src/logo.png' %}" width="108" height="30" class="d-inline-block align-top" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="bg-dark collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="bg-dark navbar-nav">
+				<li class="bg-dark nav-item dropdown">
+					<a class="bg-dark nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Videos
+					</a>
+					<div class="bg-dark dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						{% for category in categories %}
+							<a class="text-white bg-dark dropdown-item" href="/videos/{{ category.name }}">{{ category.name }}</a>
+						{% endfor %}
+					</div>
+				</li>
+				<li class="bg-dark nav-item dropdown">
+					<a class="bg-dark nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Auteurs
+					</a>
+					<div class="bg-dark dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						{% for category in categories %}
+							<a class="bg-dark text-white dropdown-item" href="/authors/{{ category.name }}">{{ category.name }}</a>
+						{% endfor %}
+					</div>
+				</li>
+				<li class="bg-dark nav-item">
+					<a class="nav-link" href="/inscription">S'inscrire</a>
+				</li>
+				<li class="bg-dark nav-item">
+					<a class="nav-link" href="/connexion">Se connecter</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
-	<nav>
-		<a href="/videos/{{ currentCat }}">Vidéos</a>
-		<a href="/authors/{{ currentCat }}">Auteurs</a>
-	</nav>
-{% block content %}
-{% endblock %}
+	<main role="main" class="container">
+		{% block content %}
+		{% endblock %}
+	</main>
 </body>
 </html>
