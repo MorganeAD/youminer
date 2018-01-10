@@ -36,3 +36,10 @@ def author_list(request, cat):
     authors = Author.objects.filter(category=authorsCategory.id)
     categories = Category.objects.all()
     return render(request, 'youminer/author_list.html', {'authors': authors, 'categories' : categories})
+
+from .models import QuestionModel
+ 
+def show(request):
+    data = {}
+    data["questions"] = QuestionModel.objects.all()
+    return render(request, "youminer/questions.html", data)

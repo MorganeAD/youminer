@@ -1,0 +1,8 @@
+{% for question in questions%}
+question:  {{question.question}} <br>
+choices:<br>
+    {% for choice in question.choices %}
+        {{choice}} <br>
+    {% endfor %}
+<hr>
+{% endfor %}
