@@ -1,0 +1,6 @@
+{% extends 'youminer/base.html' %}
+{% block content %}
+<p class="text-white">Pseudo : {{ user.username }}</p>
+<p class="text-white">Nombre de vidéos vues : {{ user.customuser.nbViewedVideos }}</p>
+<p class="text-white">Nombre de quizz réalisés : {{ user.customuser.nbQuizz }}</p>
+{% endblock %}

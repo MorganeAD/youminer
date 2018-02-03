@@ -30,6 +30,13 @@ def connected(request):
     categories = Category.objects.all()
     return render(request, 'youminer/connected.html', {'username': username, 'categories' : categories})
 
+def profil(request):
+    user = request.user
+    print(user.customuser.nbViewedVideos)
+    user = User.objects.get(username=user)
+    categories = Category.objects.all()
+    return render(request, 'youminer/profil.html', {'user': user, 'categories' : categories})
+
 def logout_page(request, *args, **kwargs):
     username = request.user
     categories = Category.objects.all()
