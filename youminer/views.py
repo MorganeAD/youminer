@@ -84,7 +84,7 @@ def author_list(request, cat):
 
 from .models import QuestionModel
  
-def show(request):
+def questions(request):
     data = {}
     if request.method == "POST":
         print(request.POST)
