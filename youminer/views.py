@@ -5,11 +5,18 @@ from .models import Author
 
 import os
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.views import logout
 
 def connected(request):
     username = request.user
     categories = Category.objects.all()
     return render(request, 'youminer/connected.html', {'username': username, 'categories' : categories})
+
+def logout_page(request, *args, **kwargs):
+    username = request.user
+    categories = Category.objects.all()
+    logout(request, *args, **kwargs)
+    return render(request, 'youminer/disconnected.html', {'username': username, 'categories' : categories})
 
 def video_show(request, vId):
     video = Video.objects.get(videoId=vId, author__isnull=False)

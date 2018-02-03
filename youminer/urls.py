@@ -8,6 +8,6 @@ urlpatterns = [
     url(r'^video/(?P<vId>[\w ]+)/$', views.video_show, name='video_show'),
     url(r'^authors/(?P<cat>[\w ]+)/$', views.author_list, name='author_list'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='youminer/login.html'), name='login'),
-    url(r'^logout/$', auth_views.LogoutView.as_view(template_name='youminer/disconnected.html'), name='logout'),
+    url(r'^logout/$', views.logout_page, name='logout_page'),
     url(r'^connected/$', views.connected, name='connected'),
 ]
