@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class CustomUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nbViewedVideos = models.IntegerField(default = 0)
+    nbQuizz = models.IntegerField(default = 0)
 
 class Category(models.Model):
     name = models.CharField(default = "", max_length = 255)
