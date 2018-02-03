@@ -35,7 +35,7 @@ def profil(request):
     print(user.customuser.nbViewedVideos)
     user = User.objects.get(username=user)
     categories = Category.objects.all()
-    return render(request, 'youminer/profil.html', {'user': user, 'categories' : categories})
+    return render(request, 'youminer/profil.html', {'username': user.username, 'user': user, 'categories' : categories})
 
 def logout_page(request, *args, **kwargs):
     username = request.user
@@ -45,6 +45,10 @@ def logout_page(request, *args, **kwargs):
 
 def video_show(request, vId):
     username = request.user
+    if request.user.is_authenticated():
+        customUser = CustomUser.objects.get(user=username)
+        customUser.nbViewedVideos += 1
+        customUser.save()
     video = Video.objects.get(videoId=vId, author__isnull=False)
     f = open('youminer/port','r')
     port = int(f.read())
