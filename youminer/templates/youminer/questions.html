@@ -3,7 +3,7 @@
 {% for question in questions%}
 question: {{question.question}} <br>
 choices:<br>
-    <form>
+    <form method="POST" class="post-form">{% csrf_token %}
         {% for choice in question.choices %}
             <div class="form-check">
                 <label class="form-check-label">
@@ -12,7 +12,7 @@ choices:<br>
                 </label>
             </div>
         {% endfor %}
-        <button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="save btn btn-default">Check</button>
     </form>
 <hr>
 {% endfor %}
