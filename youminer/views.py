@@ -4,6 +4,12 @@ from .models import Category
 from .models import Author
 
 import os
+from django.contrib.auth import authenticate, login
+
+def connected(request):
+    username = request.user
+    categories = Category.objects.all()
+    return render(request, 'youminer/connected.html', {'username': username, 'categories' : categories})
 
 def video_show(request, vId):
     video = Video.objects.get(videoId=vId, author__isnull=False)
