@@ -54,5 +54,9 @@ from .models import QuestionModel
  
 def show(request):
     data = {}
-    data["questions"] = QuestionModel.objects.all()
+    if request.method == "POST":
+        print(request.POST)
+        data["questions"] = QuestionModel.objects.all()
+    else:
+        data["questions"] = QuestionModel.objects.all()
     return render(request, "youminer/questions.html", data)
