@@ -49,6 +49,7 @@ def logout_page(request, *args, **kwargs):
 def video_show(request, vId):       
     f = open('youminer/pid','r')
     pid = int(f.read())
+    f.close()
     exitCode = os.system("pgrep vlc | grep " + str(pid))
     if exitCode==0:
         os.system('kill -9 ' + str(pid))
