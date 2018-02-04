@@ -47,6 +47,11 @@ def logout_page(request, *args, **kwargs):
     return render(request, 'youminer/disconnected.html', {'username': username, 'categories' : categories})
 
 def video_show(request, vId):       
+    f = open('youminer/pid','r')
+    pid = int(f.read())
+    exitCode = os.system("pgrep vlc | grep " + str(pid))
+    if exitCode==0:
+        os.system('kill -9 ' + str(pid))
     # update number of viewed videos
     username = request.user
     if request.user.is_authenticated():
@@ -67,7 +72,7 @@ def video_show(request, vId):
     # Run vlc in a fork
     newpid = os.fork()
     if newpid == 0:
-        os.system('vlc --intf dummy --play-and-exit ' + video.url + ' :sout="#transcode{vcodec=theo,vb=800,scale=0.25,acodec=vorb,ab=128,channels=2,samplerate=44100}:http{mux=ogg,dst=:' + str(port) + '/}" :sout-keep')
+        os.system('vlc --intf dummy --play-and-exit ' + video.url + ' :sout="#transcode{vcodec=theo,vb=800,scale=0.25,acodec=vorb,ab=128,channels=2,samplerate=44100}:http{mux=ogg,dst=:' + str(port) + '/}" :sout-keep & echo $! > ./youminer/pid')
         os._exit(0)
 
     # manage comment section
