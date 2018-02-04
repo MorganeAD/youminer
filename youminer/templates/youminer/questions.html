@@ -1,19 +1,15 @@
 {% extends 'youminer/base.html' %}
 {% block content %}
-{% for question in questions%}
-question: {{question.question}} <br>
-choices:<br>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {% for choice in question.choices %}
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="">
-                    {{choice}}
-                </label>
-            </div>
-        {% endfor %}
-	<button type="submit" class="save btn btn-default">Check</button>
-    </form>
-<hr>
-{% endfor %}
+{{question.question}}
+<form method="POST" class="post-form">{% csrf_token %}
+    {% for choice in question.choices %}
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="radio" name='checks[]' value="{{choice}}">
+                {{choice}}
+            </label>
+        </div>
+    {% endfor %}
+    <button type="submit" class="save btn btn-default">Check</button>
+</form>
 {% endblock %}
