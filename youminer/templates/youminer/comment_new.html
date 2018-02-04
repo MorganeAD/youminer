@@ -1,0 +1,9 @@
+{% extends 'youminer/video_show.html' %}
+
+{% block comment_new %}
+	<h4>New Comment</h4>
+	<form method="POST" class="comment-form">{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="send btn btn-default">Submit</button>
+	</form>
+{% endblock comment_new %}

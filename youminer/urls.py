@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^registration/$', views.add_user, name='add_user'),
     url(r'^connected/$', views.connected, name='connected'),
     url(r'^profil/$', views.profil, name='profil'),
+    url(r'^comment/(?P<cat>[\w ]+)/$', views.video_show, name='video_show'),
+    url(r'^comment/new/$', views.video_show, name='video_show'),
 ]

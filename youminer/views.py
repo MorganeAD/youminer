@@ -1,16 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Video
 from .models import Category
 from .models import Author
 from .models import CustomUser
+from .models import Comment
 from django.contrib.auth.models import User
 
 import os
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import logout
 
-from .forms import UserForm
+from .forms import UserForm, CommentForm
 from django.http import HttpResponseRedirect
+
+from django.utils import timezone
 
 def add_user(request):
     categories = Category.objects.all()
@@ -43,7 +46,7 @@ def logout_page(request, *args, **kwargs):
     logout(request, *args, **kwargs)
     return render(request, 'youminer/disconnected.html', {'username': username, 'categories' : categories})
 
-def video_show(request, vId):
+def video_show(request, vId):       
     username = request.user
     if request.user.is_authenticated():
         customUser = CustomUser.objects.get(user=username)
@@ -59,6 +62,20 @@ def video_show(request, vId):
         f.write(str(port+1))
     port = 8080
 
+    comments = Comment.objects.filter(video=video)
+
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = username
+            comment.created_date = timezone.now()
+            comment.video = video
+            comment.save()
+            #return redirect('video_show', pk=comment.pk )
+    else:
+        form = CommentForm()
+
     # Run vlc in a fork
     newpid = os.fork()
     if newpid == 0:
@@ -66,7 +83,7 @@ def video_show(request, vId):
         os._exit(0)
 
     categories = Category.objects.all()
-    return render(request, 'youminer/video_show.html', {'username': username, 'video': video, 'port' : port, 'categories' : categories})
+    return render(request, 'youminer/video_show.html', {'username': username, 'video': video, 'port' : port, 'categories' : categories, 'form': form, 'comments': comments})
 
 def video_list(request, cat):
     username = request.user
@@ -80,4 +97,17 @@ def author_list(request, cat):
     authorsCategory = Category.objects.get(name__iexact=cat)
     authors = Author.objects.filter(category=authorsCategory.id)
     categories = Category.objects.all()
-    return render(request, 'youminer/author_list.html', {'username': username, 'authors': authors, 'categories' : categories})
+    return render(request, 'youminer/author_list.html', {'username': username, 'authors': authors, 'categories' : categories, })
+
+def comment_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=false)
+            comment.author = "VAL"
+            comment.created_date = timezone.now()
+            comment.save()
+            #return redirect('post_detail', pk=post.pk )
+    else:
+        form = CommentForm()
+    return render(request, 'youminer/video_show.html', {'form': form})

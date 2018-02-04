@@ -4,4 +4,15 @@
 	<video controls="" autoplay="" width="600" height="400" port="{{ port }}">
 		<source src="http://127.0.0.1:{{ port }}" type="video/ogg" >
 	</video>
+	<h4>New Comment</h4>
+	<form method="POST" action="">{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="send btn btn-default">Submit</button>
+	</form>
+	{% for comment in comments %}
+        <div class="video">
+            <h4>{{ comment.title }} {{ comment.created_date }}</h1>
+        	<p>{{ comment.content }}</p>
+        </div>
+    {% endfor %}
 {% endblock %}

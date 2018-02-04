@@ -38,3 +38,13 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comment(models.Model):
+    commentId    = models.CharField(default = "", max_length = 255, primary_key=True)
+    video        = models.ForeignKey(Video, on_delete=models.CASCADE)
+    author       = models.CharField(default = "", max_length = 255)
+    created_date = models.CharField(default = "", max_length = 255)
+    content      = models.CharField(default = "", max_length = 255)
+    
+    def __str__(self):
+        return self.content
