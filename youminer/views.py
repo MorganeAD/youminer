@@ -25,8 +25,8 @@ def add_user(request):
             login(request, new_user)
             return render(request, 'youminer/connected.html', {'username': new_user.username, 'categories' : categories})
     else:
-        form = UserForm() 
-    return render(request, 'youminer/adduser.html', {'categories' : categories, 'form': form}) 
+        form = UserForm()
+    return render(request, 'youminer/adduser.html', {'categories' : categories, 'form': form})
 
 def connected(request):
     username = request.user
@@ -116,3 +116,26 @@ def comment_new(request):
     else:
         form = CommentForm()
     return render(request, 'youminer/video_show.html', {'form': form})
+
+from .models import QuestionModel
+
+def questions(request):
+    data = {}
+
+    if request.user.is_authenticated():
+        customUser = CustomUser.objects.get(user = request.user)
+
+        if customUser.nbQuizz == 100:
+            return render(request, "youminer/questions_finished.html", data)
+        if customUser.nbQuizz >= (customUser.nbViewedVideos // 10) * 10:
+                return render(request, "youminer/questions_cannot.html", { 'missing': ((customUser.nbQuizz // 10) + 1) * 10 - customUser.nbViewedVideos })
+        if request.method == "POST":
+            if QuestionModel.objects[customUser.nbQuizz].answer == QuestionModel.objects[customUser.nbQuizz].choices.index(request.POST.getlist('checks[]')[0]):
+                customUser.nbQuizz += 1
+                customUser.save()
+                data["question"] = QuestionModel.objects[customUser.nbQuizz]
+            else:
+                data["question"] = QuestionModel.objects[customUser.nbQuizz]
+        else:
+            data["question"] = QuestionModel.objects[customUser.nbQuizz]
+    return render(request, "youminer/questions.html", data)

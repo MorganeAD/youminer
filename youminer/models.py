@@ -47,3 +47,12 @@ class Comment(models.Model):
     
     def __str__(self):
         return self.content
+from mongoengine import *
+ 
+connect('quizz')
+
+class QuestionModel(Document):
+    _id      = IntField()
+    question = StringField()
+    answer   = IntField()
+    choices  = ListField(StringField())
