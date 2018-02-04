@@ -40,9 +40,8 @@ class Video(models.Model):
         return self.title
 
 class Comment(models.Model):
-    commentId    = models.CharField(default = "", max_length = 255, primary_key=True)
     video        = models.ForeignKey(Video, on_delete=models.CASCADE)
-    author       = models.CharField(default = "", max_length = 255)
+    author       = models.ForeignKey(User, on_delete=models.CASCADE)
     created_date = models.CharField(default = "", max_length = 255)
     content      = models.CharField(default = "", max_length = 255)
     

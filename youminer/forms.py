@@ -17,6 +17,10 @@ class UserForm(ModelForm):
         self.fields['password'].label = "Mot de passe"
 
 class CommentForm(forms.ModelForm):
-	class Meta:
-		model = Comment
-		fields = ('content',)
+    class Meta:
+        model = Comment
+        fields = ('content',)
+
+    def __init__(self, *args, **kwargs):
+        super(ModelForm, self).__init__(*args, **kwargs)
+        self.fields['content'].label = ""

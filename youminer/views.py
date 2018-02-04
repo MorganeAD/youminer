@@ -47,11 +47,14 @@ def logout_page(request, *args, **kwargs):
     return render(request, 'youminer/disconnected.html', {'username': username, 'categories' : categories})
 
 def video_show(request, vId):       
+    # update number of viewed videos
     username = request.user
     if request.user.is_authenticated():
         customUser = CustomUser.objects.get(user=username)
         customUser.nbViewedVideos += 1
         customUser.save()
+
+    # open the video on vlc
     video = Video.objects.get(videoId=vId, author__isnull=False)
     f = open('youminer/port','r')
     port = int(f.read())
@@ -61,9 +64,14 @@ def video_show(request, vId):
     else:
         f.write(str(port+1))
     port = 8080
+    # Run vlc in a fork
+    newpid = os.fork()
+    if newpid == 0:
+        os.system('vlc --intf dummy --play-and-exit ' + video.url + ' :sout="#transcode{vcodec=theo,vb=800,scale=0.25,acodec=vorb,ab=128,channels=2,samplerate=44100}:http{mux=ogg,dst=:' + str(port) + '/}" :sout-keep')
+        os._exit(0)
 
+    # manage comment section
     comments = Comment.objects.filter(video=video)
-
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -72,15 +80,7 @@ def video_show(request, vId):
             comment.created_date = timezone.now()
             comment.video = video
             comment.save()
-            #return redirect('video_show', pk=comment.pk )
-    else:
-        form = CommentForm()
-
-    # Run vlc in a fork
-    newpid = os.fork()
-    if newpid == 0:
-        os.system('vlc --intf dummy --play-and-exit ' + video.url + ' :sout="#transcode{vcodec=theo,vb=800,scale=0.25,acodec=vorb,ab=128,channels=2,samplerate=44100}:http{mux=ogg,dst=:' + str(port) + '/}" :sout-keep')
-        os._exit(0)
+    form = CommentForm()
 
     categories = Category.objects.all()
     return render(request, 'youminer/video_show.html', {'username': username, 'video': video, 'port' : port, 'categories' : categories, 'form': form, 'comments': comments})

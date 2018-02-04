@@ -1,18 +1,23 @@
 {% extends 'youminer/base.html' %}
 {% block content %}
-	<h1>{{ video.author.channelTitle }} : {{ video.title }}</h1>
+	<h1 class="text-white">{{ video.author.channelTitle }} : {{ video.title }}</h1>
 	<video controls="" autoplay="" width="600" height="400" port="{{ port }}">
 		<source src="http://127.0.0.1:{{ port }}" type="video/ogg" >
 	</video>
-	<h4>New Comment</h4>
-	<form method="POST" action="">{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit" class="send btn btn-default">Submit</button>
-	</form>
+	{% if user.is_authenticated %}
+        <div id="commentForm">
+			<h4 class="text-white">Poster un nouveau commentaire :</h4>
+			<form method="POST" action="">{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit" class="send btn btn-default">Envoyer</button>
+			</form>
+		</div>
+	{% endif %}
 	{% for comment in comments %}
-        <div class="video">
-            <h4>{{ comment.title }} {{ comment.created_date }}</h1>
-        	<p>{{ comment.content }}</p>
+        <div class="comment">
+			<h4 class="text-white">{{ comment.author }}</h4>
+			<p>({{ comment.created_date }})</p>
+        	<p class="text-white">{{ comment.content }}</p>
         </div>
     {% endfor %}
 {% endblock %}
