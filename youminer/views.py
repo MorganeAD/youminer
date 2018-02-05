@@ -128,8 +128,8 @@ def questions(request):
 
         if customUser.nbQuizz == 100:
             return render(request, "youminer/questions_finished.html", data)
-        if customUser.nbQuizz >= (customUser.nbViewedVideos // 10) * 10:
-                return render(request, "youminer/questions_cannot.html", { 'missing': ((customUser.nbQuizz // 10) + 1) * 10 - customUser.nbViewedVideos })
+        if customUser.nbQuizz >= customUser.nbViewedVideos:
+                return render(request, "youminer/questions_cannot.html", {})
         if request.method == "POST":
             if QuestionModel.objects[customUser.nbQuizz].answer == QuestionModel.objects[customUser.nbQuizz].choices.index(request.POST.getlist('checks[]')[0]):
                 customUser.nbQuizz += 1
