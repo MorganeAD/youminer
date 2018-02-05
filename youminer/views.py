@@ -48,11 +48,13 @@ def logout_page(request, *args, **kwargs):
 
 def video_show(request, vId):       
     f = open('youminer/pid','r')
-    pid = int(f.read())
+    buf = f.read()
     f.close()
-    exitCode = os.system("pgrep vlc | grep " + str(pid))
-    if exitCode==0:
-        os.system('kill -9 ' + str(pid))
+    if buf != "":
+        pid = int(buf)
+        exitCode = os.system("pgrep vlc | grep " + str(pid))
+        if exitCode==0:
+            os.system('kill -9 ' + str(pid))
     # update number of viewed videos
     username = request.user
     if request.user.is_authenticated():
