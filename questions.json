@@ -1,0 +1,1081 @@
+[
+{
+	"_id": 1,
+	"question": "What does commodity Hardware in Hadoop world mean?",
+	"answer": 3,
+	"choices": [
+			"Very cheap hardware",
+			"Industry standard hardware",
+			"Discarded hardware",
+			"Low specifications Industry grade hardware"
+		]
+	},
+{
+	"_id": 2,
+	"question": "Which of the following are NOT big data problem(s)?",
+	"answer": 3,
+	"choices": [
+			"Parsing 5 MB XML file every 5 minutes",
+			"Processing IPL tweet sentiments",
+			"Processing online bank transactions",
+			"both (a) and (c)"
+		]
+	},
+{
+	"_id": 3,
+	"question": "What does \"Velocity\" in Big Data mean?",
+	"answer": 3,
+	"choices": [
+			"Speed of input data generation",
+			"Speed of individual machine processors",
+			"Speed of ONLY storing data",
+			"Speed of storing and processing data"
+		]
+	},
+{
+	"_id": 4,
+	"question": "The term Big Data first originated from:",
+	"answer": 2,
+	"choices": [
+			"Stock Markets Domain",
+			"Banking and Finance Domain",
+			"Genomics and Astronomy Domain",
+			"Social Media Domain"
+		]
+	},
+{
+	"_id": 5,
+	"question": "Which of the following Batch Processing instance is NOT an example of BigData Batch Processing?",
+	"answer": 3,
+	"choices": [
+			"Processing 10 GB sales data every 6 hours",
+			"Processing flights sensor data",
+			"Web crawling app",
+			"Trending topic analysis of tweets for last 15 minutes"
+		]
+	},
+{
+	"_id": 6,
+	"question": "Which of the following are example(s) of Real Time Big Data Processing?",
+	"answer": 3,
+	"choices": [
+			"Complex Event Processing (CEP) platforms",
+			"Stock market data analysis",
+			"Bank fraud transactions detection",
+			"both (a) and (c)"
+		]
+	},
+{
+	"_id": 7,
+	"question": "Sliding window operations typically fall in the category of",
+	"answer": 2,
+	"choices": [
+			"OLTP Transactions",
+			"Big Data Batch Processing",
+			"Big Data Real Time Processing",
+			"Small Batch Processing"
+		]
+	},
+{
+	"_id": 8,
+	"question": "What is HBase used as?",
+	"answer": 0,
+	"choices": [
+			"Tool for Random and Fast Read/Write operations in Hadoop",
+			"Faster Read only query engine in Hadoop",
+			"MapReduce alternative in Hadoop",
+			"Fast MapReduce layer in Hadoop"
+		]
+	},
+{
+	"_id": 9,
+	"question": "What is Hive used as?",
+	"answer": 3,
+	"choices": [
+			"Hadoop query engine",
+			"MapReduce wrapper",
+			"Hadoop SQL interface",
+			"All of the above"
+		]
+	},
+{
+	"_id": 10,
+	"question": "Which of the following are NOT true for Hadoop?",
+	"answer": 3,
+	"choices": [
+			"It's a tool for Big Data analysis",
+			"It supports structured and unstructured data analysis",
+			"It aims for vertical scaling out/in scenarios",
+			"Both (a) and (c)"
+		]
+	},
+{
+	"_id": 11,
+	"question": "Which of the following are the core components of Hadoop?",
+	"answer": 3,
+	"choices": [
+			"HDFS",
+			"Map Reduce",
+			"HBase",
+			"Both (a) and (b)"
+		]
+	},
+{
+	"_id": 12,
+	"question": "Hadoop is open source.",
+	"answer": 1,
+	"choices": [
+			"ALWAYS True",
+			"True only for Apache Hadoop",
+			"True only for Apache and Cloudera Hadoop",
+			"ALWAYS False"
+		]
+	},
+{
+	"_id": 13,
+	"question": "Hive can be used for real time queries.",
+	"answer": 1,
+	"choices": [
+			"TRUE",
+			"FALSE",
+			"True if data set is small",
+			"True for some distributions"
+		]
+	},
+{
+	"_id": 14,
+	"question": "What is the default HDFS block size?",
+	"answer": 3,
+	"choices": [
+			"32 MB",
+			"64 KB",
+			"128 KB",
+			"64 MB"
+		]
+	},
+{
+	"_id": 15,
+	"question": "What is the default HDFS replication factor?",
+	"answer": 2,
+	"choices": [
+			"4",
+			"1",
+			"3",
+			"2"
+		]
+	},
+{
+	"_id": 16,
+	"question": "Which of the following is NOT a type of metadata in NameNode?",
+	"answer": 2,
+	"choices": [
+			"List of files",
+			"Block locations of files",
+			"No. of file records",
+			"File access control information"
+		]
+	},
+{
+	"_id": 17,
+	"question": "Which of the following is/are correct?",
+	"answer": 3,
+	"choices": [
+			"NameNode is the SPOF in Hadoop 1.x",
+			"NameNode is the SPOF in Hadoop 2.x",
+			"NameNode keeps the image of the file system also",
+			"Both (a) and (c)"
+		]
+	},
+{
+	"_id": 18,
+	"question": "The mechanism used to create replica in HDFS is____________.",
+	"answer": 2,
+	"choices": [
+			"Gossip protocol",
+			"Replicate protocol",
+			"HDFS protocol",
+			"Store and Forward protocol"
+		]
+	},
+{
+	"_id": 19,
+	"question": "NameNode tries to keep the first copy of data nearest to the client machine.",
+	"answer": 2,
+	"choices": [
+			"ALWAYS true",
+			"ALWAYS False",
+			"True if the client machine is the part of the cluster",
+			"True if the client machine is not the part of the cluster"
+		]
+	},
+{
+	"_id": 20,
+	"question": "HDFS data blocks can be read in parallel.",
+	"answer": 0,
+	"choices": [
+			"TRUE",
+			"FALSE"
+		]
+	},
+{
+	"_id": 21,
+	"question": "Where is HDFS replication factor controlled?",
+	"answer": 3,
+	"choices": [
+			"mapred-site.xml",
+			"yarn-site.xml",
+			"core-site.xml",
+			"hdfs-site.xml"
+		]
+	},
+{
+	"_id": 22,
+	"question": "Read the statement and select the correct option: It is necessary to default all the properties in Hadoop config files.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 23,
+	"question": "Which of the following Hadoop config files is used to define the heap size?",
+	"answer": 2,
+	"choices": [
+			"hdfs-site.xml",
+			"core-site.xml",
+			"hadoop-env.sh",
+			"Slaves"
+		]
+	},
+{
+	"_id": 24,
+	"question": "Which of the following is not a valid Hadoop config file?",
+	"answer": 1,
+	"choices": [
+			"mapred-site.xml",
+			"hadoop-site.xml",
+			"core-site.xml",
+			"Masters"
+		]
+	},
+{
+	"_id": 25,
+	"question": "Read the statement: NameNodes are usually high storage machines in the clusters.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False",
+			"Depends on cluster size",
+			"True if co-located with Job tracker"
+		]
+	},
+{
+	"_id": 26,
+	"question": "From the options listed below, select the suitable data sources for flume.",
+	"answer": 3,
+	"choices": [
+			"Publicly open web sites",
+			"Local data folders",
+			"Remote web servers",
+			"Both (a) and (c)"
+		]
+	},
+{
+	"_id": 27,
+	"question": "Read the statement and select the correct options: distcp command ALWAYS needs fully qualified hdfs paths.",
+	"answer": 0,
+	"choices": [
+			"True",
+			"False",
+			"True, if source and destination are in same cluster",
+			"False if source and destination are in same cluster"
+		]
+	},
+{
+	"_id": 28,
+	"question": "Which of following statement(s) are true about distcp command?",
+	"answer": 0,
+	"choices": [
+			"It invokes MapReduce in background",
+			"It invokes MapReduce if source and destination are in same cluster",
+			"It can't copy data from local folder to hdfs folder",
+			"You can't overwrite the files through distcp command"
+		]
+	},
+{
+	"_id": 29,
+	"question": "Which of the following is NOT the component of Flume?",
+	"answer": 1,
+	"choices": [
+			"Sink",
+			"Database",
+			"Source",
+			"Channel"
+		]
+	},
+{
+	"_id": 30,
+	"question": "Which of the following is the correct sequence of MapReduce flow?",
+	"answer": 2,
+	"choices": [
+			"Map - Reduce - Combine",
+			"Combine - Reduce - Map",
+			"Map - Combine - Reduce",
+			"Reduce - Combine - Map"
+		]
+	},
+{
+	"_id": 31,
+	"question": "Which of the following can be used to control the number of part files (B) in a map reduce program output directory?",
+	"answer": 1,
+	"choices": [
+			"Number of Mappers",
+			"Number of Reducers",
+			"Counter",
+			"Partitioner"
+		]
+	},
+{
+	"_id": 32,
+	"question": "Which of the following operations can't use Reducer as combiner also?",
+	"answer": 3,
+	"choices": [
+			"Group by Minimum",
+			"Group by Maximum",
+			"Group by Count",
+			"Group by Average"
+		]
+	},
+{
+	"_id": 33,
+	"question": "Which of the following is/are true about combiners?",
+	"answer": 3,
+	"choices": [
+			"Combiners can be used for mapper only job",
+			"Combiners can be used for any Map Reduce operation",
+			"Mappers can be used as a combiner class",
+			"Combiners are primarily aimed to improve Map Reduce performance",
+			"Combiners can't be applied for associative operations"
+		]
+	},
+{
+	"_id": 34,
+	"question": "Reduce side join is useful for",
+	"answer": 0,
+	"choices": [
+			"Very large datasets",
+			"Very small data sets",
+			"One small and other big data sets",
+			"One big and other small datasets"
+		]
+	},
+{
+	"_id": 35,
+	"question": "Distributed Cache can be used in",
+	"answer": 3,
+	"choices": [
+			"Mapper phase only",
+			"Reducer phase only",
+			"In either phase, but not on both sides simultaneously",
+			"In either phase"
+		]
+	},
+{
+	"_id": 36,
+	"question": "Counters persist the data on hard disk.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 37,
+	"question": "What is optimal size of a file for distributed cache?",
+	"answer": 2,
+	"choices": [
+			"&lt;=10 MB",
+			"&gt;=250 MB",
+			"&lt;=100 MB",
+			"&lt;=35 MB"
+		]
+	},
+{
+	"_id": 38,
+	"question": "Number of mappers is decided by the",
+	"answer": 3,
+	"choices": [
+			"Mappers specified by the programmer",
+			"Available Mapper slots",
+			"Available heap memory",
+			"Input Splits",
+			"Input Format"
+		]
+	},
+{
+	"_id": 39,
+	"question": "Which of the following type of joins can be performed in Reduce side join operation?",
+	"answer": 4,
+	"choices": [
+			"Equi Join",
+			"Left Outer Join",
+			"Right Outer Join",
+			"Full Outer Join",
+			"All of the above"
+		]
+	},
+{
+	"_id": 40,
+	"question": "What should be an upper limit for counters of a Map Reduce job?",
+	"answer": 3,
+	"choices": [
+			"~5s",
+			"~15",
+			"~150",
+			"~50"
+		]
+	},
+{
+	"_id": 41,
+	"question": "Which of the following class is responsible for converting inputs to key-value Pairs of Map Reduce",
+	"answer": 2, 
+	"choices": [
+			"FileInputFormat",
+			"InputSplit",
+			"RecordReader",
+			"Mapper"
+		]
+	},
+{
+	"_id": 42,
+	"question": "Which of the following writables can be used to know value from a mapper/reducer?",
+	"answer": 2,
+	"choices": [
+			"Text",
+			"IntWritable",
+			"Nullwritable",
+			"String"
+		]
+	},
+{
+	"_id": 43,
+	"question": "Distributed cache files can't be accessed in Reducer.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 44,
+	"question": "Only one distributed cache file can be used in a Map Reduce job.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 45,
+	"question": "A Map reduce job can be written in:",
+	"answer": 3,
+	"choices": [
+			"Java",
+			"Ruby",
+			"Python",
+			"Any Language which can read from input stream"
+		]
+	},
+{
+	"_id": 46,
+	"question": "Pig is a:",
+	"answer": 1,
+	"choices": [
+			"Programming Language",
+			"Data Flow Language",
+			"Query Language",
+			"Database"
+		]
+	},
+{
+	"_id": 47,
+	"question": "Pig is good for:",
+	"answer": 4,
+	"choices": [
+			"Data Factory operations",
+			"Data Warehouse operations",
+			"Implementing complex SQLs",
+			"Creating multiple datasets from a single large dataset",
+			"Both (a) and (d)"
+		]
+	},
+{
+	"_id": 48,
+	"question": "Pig can be used for real-time data updates.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 49,
+	"question": "Pig jobs have the same run time as the native Map Reduce jobs.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 50,
+	"question": "Which of the following is the correct representation to access \"Skill\"; from the Bag {';Skills';,55, (';Skill';, ';Speed';), {2, (';San';, ';Mateo';)}}",
+	"answer": 0,
+	"choices": [
+			"$3.$1",
+			"$3.$0",
+			"$2.$0",
+			"$2.$1"
+		]
+	},
+{
+	"_id": 51,
+	"question": "Replicated joins are useful for dealing with data skew.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 52,
+	"question": "Maximum size allowed for small dataset in replicated join is:",
+	"answer": 2,
+	"choices": [
+			"10KB",
+			"10 MB",
+			"100 MB",
+			"500 MB"
+		]
+	},
+{
+	"_id": 53,
+	"question": "Parameters could be passed to Pig scripts from:",
+	"answer": 4,
+	"choices": [
+			"Parent Pig Scripts",
+			"Shell Script",
+			"Command Line",
+			"Configuration File",
+			"All the above except (a)"
+		]
+	},
+{
+	"_id": 54,
+	"question": "The schema of a relation can be examined through:",
+	"answer": 1,
+	"choices": [
+			"ILLUSTRATE",
+			"DESCRIBE",
+			"DUMP",
+			"EXPLAIN"
+		]
+	},
+{
+	"_id": 55,
+	"question": "DUMP Statement writes the output in a file.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 56,
+	"question": "Data can be supplied to PigUnit tests from:",
+	"answer": 2,
+	"choices": [
+			"HDFS Location",
+			"Within Program",
+			"Both (a) and (b)",
+			"None of the above"
+		]
+	},
+{
+	"_id": 57,
+	"question": "Which of the following constructs are valid Pig Control Structures?",
+	"answer": 3,
+	"choices": [
+			"If-else",
+			"For Loop",
+			"Until Loop",
+			"None of the above"
+		]
+	},
+{
+	"_id": 58,
+	"question": "Which of following is the return data type of Filter UDF?",
+	"answer": 2,
+	"choices": [
+			"String",
+			"Integer",
+			"Boolean",
+			"None of the above"
+		]
+	},
+{
+	"_id": 59,
+	"question": "UDFs can be applied only in FOREACH statements in Pig.",
+	"answer": 0,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 60,
+	"question": "Which of the following are not possible in Hive?",
+	"answer": 4,
+	"choices": [
+			"Creating Tables",
+			"Creating Indexes",
+			"Creating Synonym",
+			"Writing Update Statements",
+			"Both (c) and (d)"
+		]
+	},
+{
+	"_id": 61,
+	"question": "Who will initiate the mapper?",
+	"answer": 0,
+	"choices": [
+			"Task tracker",
+			"Job tracker",
+			"Combiner",
+			"Reducer"
+		]
+	},
+{
+	"_id": 62,
+	"question": "Categorize the following to the following datatype",
+	"answer": 0, 
+	"choices": [
+			"JSON files - Semi-structured",
+			"Word Docs , PDF Files , Text files &#8211; Unstructured",
+			"Email body &#8211; Unstructured",
+			"Data from enterprise systems (DB CRM) &#8211; Structured"
+		]
+	},
+{
+	"_id": 63,
+	"question": "Which of the following are the Big Data Solutions Candidates?",
+	"answer": 4,
+	"choices": [
+			"Processing 1.5 TB data everyday",
+			"Processing 30 minutes Flight sensor data",
+			"Interconnecting 50K data points (approx. 1 MB input file)",
+			"Processing User clicks on a website",
+			"All of the above"
+		]
+	},
+{
+	"_id": 64,
+	"question": "Hadoop is a framework that allows the distributed processing of:",
+	"answer": 2,
+	"choices": [
+			"Small Data Sets",
+			"Semi-Large Data Sets",
+			"Large Data Sets",
+			"Large and Small Data sets"
+		]
+	},
+{
+	"_id": 65,
+	"question": "Where does Sqoop ingest data from? (B) &amp;",
+	"answer": 3,
+	"choices": [
+			"Linux File Directory",
+			"Oracle",
+			"HBase",
+			"MySQL",
+			"MongoDB"
+		]
+	},
+{
+	"_id": 66,
+	"question": "Identify the batch processing scenarios from following: (C) &amp;",
+	"answer": 4,
+	"choices": [
+			"Sliding Window Averages Job",
+			"Facebook Comments Processing Job",
+			"Inventory Dynamic Pricing Job",
+			"Fraudulent Transaction Identification Job",
+			"Financial Forecasting Job"
+		]
+	},
+{
+	"_id": 67,
+	"question": "Which of the following is not true about Name Node? (B)&amp; (C) &amp",
+	"answer": 3,
+	"choices": [
+			"It is the Master Machine of the Cluster",
+			"It is Name Node that can store user data",
+			"Name Node is a storage heavy machine",
+			"Name Node can be replaced by any Data Node Machine"
+		]
+	},
+{
+	"_id": 68,
+	"question": "Which of the following are NOT metadata items?",
+	"answer": 4,
+	"choices": [
+			"List of HDFS files",
+			"HDFS block locations",
+			"Replication factor of files",
+			"Access Rights",
+			"File Records distribution"
+		]
+	},
+{
+	"_id": 69,
+	"question": "What decides number of Mappers for a MapReduce job?",
+	"answer": 2,
+	"choices": [
+			"File Location",
+			"mapred.map.tasks parameter",
+			"Input file size",
+			"Input Splits"
+		]
+	},
+{
+	"_id": 70,
+	"question": "Name Node monitors block replication process",
+	"answer": 1,
+	"choices": [
+			"TRUE",
+			"FALSE",
+			"Depends on file type"
+		]
+	},
+{
+	"_id": 71,
+	"question": "Which of the following are true for Hadoop Pseudo Distributed Mode?",
+	"answer": 2,
+	"choices": [
+			"It runs on multiple machines",
+			"Runs on multiple machines without any daemons",
+			"Runs on Single Machine with all daemons",
+			"Runs on Single Machine without all daemons"
+		]
+	},
+{
+	"_id": 72,
+	"question": "Which of following statement(s) are correct?",
+	"answer": 2,
+	"choices": [
+			"Master and slaves files are optional in Hadoop 2.x",
+			"Master file has list of all name nodes",
+			"Core-site has hdfs and MapReduce related common properties",
+			"hdfs-site file is now deprecated in Hadoop 2.x"
+		]
+	},
+{
+	"_id": 73,
+	"question": "Which of the following is true for Hive?",
+	"answer": 2,
+	"choices": [
+			"Hive is the database of Hadoop",
+			"Hive supports schema checking",
+			"Hive doesn't allow row level updates",
+			"Hive can replace an OLTP system"
+		]
+	},
+{
+	"_id": 74,
+	"question": "Which of the following is the highest level of Data Model in Hive?",
+	"answer": 2,
+	"choices": [
+			"Table",
+			"View",
+			"Database",
+			"Partitions"
+		]
+	},
+{
+	"_id": 75,
+	"question": "Hive queries response time is in order of",
+	"answer": 2,
+	"choices": [
+			"Hours at least",
+			"Minutes at least",
+			"Seconds at least",
+			"Milliseconds at least"
+		]
+	},
+{
+	"_id": 76,
+	"question": "Managed tables in Hive:",
+	"answer": 3,
+	"choices": [
+			"Can load the data only from HDFS",
+			"Can load the data only from local file system",
+			"Are useful for enterprise wide data",
+			"Are Managed by Hive for their data and metadata"
+		]
+	},
+{
+	"_id": 77,
+	"question": "Partitioned tables in Hive:",
+	"answer": 3,
+	"choices": [
+			"Are aimed to increase the performance of the queries",
+			"Modify the underlying HDFS structure",
+			"Are not useful if the filter columns for query are different from the partition columns",
+			"All of the above"
+		]
+	},
+{
+	"_id": 78,
+	"question": "Hive UDFs can only be written in Java",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 79,
+	"question": "Hive can load the data from:",
+	"answer": 3,
+	"choices": [
+			"Local File system",
+			"HDFS File system",
+			"Output of a Pig Job",
+			"All of the above"
+		]
+	},
+{
+	"_id": 80,
+	"question": "HBase is a key/value store. Specifically it is:",
+	"answer": 4,
+	"choices": [
+			"Sparse",
+			"Sorted Map",
+			"Distributed",
+			"Consistent",
+			"Multi- dimensional"
+		]
+	},
+{
+	"_id": 81,
+	"question": "Which of the following is the outer most part of HBase data model",
+	"answer": 0,
+	"choices": [
+			"Database",
+			"Table",
+			"Row key",
+			"Column family"
+		]
+	},
+{
+	"_id": 82,
+	"question": "Which of the following is/are true?",
+	"answer": 4,
+	"choices": [
+			"HBase table has fixed number of Column families",
+			"HBase table has fixed number of Columns",
+			"HBase doesn't allow row level updates",
+			"HBase access HDFS data",
+			"A & D"
+		]
+	},
+{
+	"_id": 83,
+	"question": "Data can be loaded in HBase from Pig using",
+	"answer": 3,
+	"choices": [
+			"PigStorage",
+			"SqoopStorage",
+			"BinStorage",
+			"HbaseStorage"
+		]
+	},
+{
+	"_id": 84,
+	"question": "Sqoop can load the data in HBase",
+	"answer": 0,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 85,
+	"question": "Which of the following APIs can be used for exploring HBase tables?",
+	"answer": 3,
+	"choices": [
+			"HBaseDescriptor",
+			"HBaseAdmin",
+			"Configuration",
+			"HTable"
+		]
+	},
+{
+	"_id": 86,
+	"question": "Which of the following tables in HBase holds the region to key mapping?",
+	"answer": 1,
+	"choices": [
+			"ROOT",
+			".META.",
+			"MAP",
+			"REGIONS"
+		]
+	},
+{
+	"_id": 87,
+	"question": "What is the data type of version in HBase?",
+	"answer": 1,
+	"choices": [
+			"INT",
+			"LONG",
+			"STRING",
+			"DATE"
+		]
+	},
+{
+	"_id": 88,
+	"question": "What is the data type of row key in HBase?",
+	"answer": 3,
+	"choices": [
+			"INT",
+			"STRING",
+			"BYTE",
+			"BYTE[]"
+		]
+	},
+{
+	"_id": 89,
+	"question": "HBase first reads the data from",
+	"answer": 1,
+	"choices": [
+			"Block Cache",
+			"Memstore",
+			"HFile",
+			"WAL"
+		]
+	},
+{
+	"_id": 90,
+	"question": "The High availability of Namenode is achieved in HDFS2.x using",
+	"answer": 2,
+	"choices": [
+			"Polled Edit Logs",
+			"Synchronized Edit Logs",
+			"Shared Edit Logs",
+			"Edit Logs Replacement"
+		]
+	},
+{
+	"_id": 91,
+	"question": "The application master monitors all Map Reduce applications in the cluster",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 92,
+	"question": "HDFS Federation is useful for the cluster size of:",
+	"answer": 2,
+	"choices": [
+			"&gt;500 nodes",
+			"&gt;900 nodes",
+			"&gt; 5000 nodes",
+			"&gt; 3500 nodes"
+		]
+	},
+{
+	"_id": 93,
+	"question": "Hive managed tables stores the data in",
+	"answer": 2,
+	"choices": [
+			"Local Linux path",
+			"Any HDFS path",
+			"HDFS warehouse path",
+			"None of the above"
+		]
+	},
+{
+	"_id": 94,
+	"question": "On dropping managed tables, Hive:",
+	"answer": 2,
+	"choices": [
+			"Retains data, but deletes metadata",
+			"Retains metadata, but deletes data",
+			"Drops both, data and metadata",
+			"Retains both data and metadata"
+		]
+	},
+{
+	"_id": 95,
+	"question": "Managed tables don't allow loading data from other tables.",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 96,
+	"question": "External tables can load the data from warehouse Hive directory.",
+	"answer": 0,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 97,
+	"question": "On dropping external tables, Hive:",
+	"answer": 0,
+	"choices": [
+			"Retains data, but deletes metadata",
+			"Retains metadata, but deletes data",
+			"Drops both, data and metadata",
+			"Retains both data and metadata"
+		]
+	},
+{
+	"_id": 98,
+	"question": "Partitioned tables can't load the data from normal (partitioned) tables",
+	"answer": 1,
+	"choices": [
+			"True",
+			"False"
+		]
+	},
+{
+	"_id": 99,
+	"question": "The partitioned columns in Hive tables are",
+	"answer": 1,
+	"choices": [
+			"Physically present and can be accessed",
+			"Physically absent but can be accessed",
+			"Physically present but can't be accessed",
+			"Physically absent and can't be accessed"
+		]
+	},
+{
+	"_id": 100,
+	"question": "Hive data models represent",
+	"answer": 2,
+	"choices": [
+			"Table in Metastore DB",
+			"Table in HDFS",
+			"Directories in HDFS",
+			"None of the above"
+		]
+	}
+]

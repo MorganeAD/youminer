@@ -14,11 +14,7 @@ Prérequis
 Cet outil est conçu pour fonctionner sur [GNU/Linux][gnulinux] et à priori
 tous les système \*nix. youminer utilise le framework [Django][django]. Il
 est donc nécéssaire d'avoir [Python 3.6][python] installé sur le server.
-Ce guide ne courve l'installation que pour [Debian][debian].
-
-Before running youminer, you will have to put your YouTube API key on a
-file named *apikey.sh*. Create a file name *apikey.sh* with the editor
-of your choise and write in it :
+Ce guide ne courve l'installation que pour [Arch Linux][archlinux].
 
 Vous aurez aussi besoin d'une clé développeur YouTube pour permettre à
 youminer de communiquer avec l'API de YouTube. Vous devrez inserer cette
@@ -41,15 +37,20 @@ Avant toute chose, entrez votre clé développeur dans le fichier
 L'installation de youminer commence par la mise en place d'un
 environnement virtuel Python et l'installation de Django et des outils
 nécéssaires au bon fonctionnement de youminer. Installez d'abord le module
-d'environnement virtuel pour Python :
+d'environnement virtuel pour Python ainsi que les outils pour MongoDB:
 
-    $ sudo apt update
-    $ sudo apt install python3.6-venv
+    $ sudo pacman -Syu
+    $ sudo pacman -S python python-virtualenv mongodb mongodb-tools
+
+Activez le service MongoDB puis importez la base de données du quizz :
+
+    $ sudo systemctl start mongodb.service
+    $ mongoimport -d quizz -c quizz --jsonArray <questions.json
 
 Mettez ensuite en place l'environnement virtuel - vérifiez bien que vous
 êtes dans le répertoire de youminer.
 
-    $ python3.6 -mvenv myvenv
+    $ python -mvenv myvenv
 
 Placer des l'environnement virtuel créé puis installer Django et le module
 [MongoDB][mongodb] pour Python.
@@ -91,7 +92,7 @@ Pour démarrer le quizz, utilisez cette adresse :
 > Il est nécéssaire d'avoir regardé un certain nombre de videos pour
 débloquer toutes les questions du quizz.
 
-[debian]: https://www.debian.org/
+[archlinux]: https://www.archlinux.org/
 [django]: https://www.djangoproject.com/
 [gnulinux]: https://www.gnu.org/
 [mongodb]: https://www.mongodb.com/
